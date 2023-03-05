@@ -16,7 +16,7 @@ export default function Question(props) {
     setShuffledAnswers(answers.sort(() => Math.random() - 0.5));
   }, [answers]);
 
-  console.log(answers)
+  
   React.useEffect(() => {
     if (selected !== null) {
       setIsCorrect(shuffledAnswers[selected] === props.correct);
