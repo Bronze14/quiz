@@ -9,6 +9,7 @@ export default function App(){
     const [allAnswersChecked, setAllAnswersChecked] = React.useState(false);
     const [checked, setChecked] = React.useState(false)
     const [start,setStart] = React.useState(false)
+    
     function createNewNote(){
       setStart(true)
     }
@@ -59,6 +60,7 @@ export default function App(){
       txt.innerHTML = html;
       return txt.value;
     }
+    if (data === null) return <div className="loader"></div>
 
     return (
       <main>
