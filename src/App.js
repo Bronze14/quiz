@@ -60,7 +60,6 @@ export default function App(){
       txt.innerHTML = html;
       return txt.value;
     }
-    if (data === null) return <div className="loader"></div>
 
     return (
       <main>
@@ -70,6 +69,7 @@ export default function App(){
         sizes={[3000, 700]} 
         direction="horizontal" 
         className="split">
+          {data !== null ?
           <div>
             {data && data.results.map(prevState => (
               <Question 
@@ -94,6 +94,7 @@ export default function App(){
             )}
             </div>
           </div>
+          : <div className="loader"></div>} 
           </Split>
           :
           <div className="no-notes">
